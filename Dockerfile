@@ -5,14 +5,14 @@ FROM python:3.8
 WORKDIR /opt/app
 
 # 호스트 머신에 있는 파일이나 폴더를, WORKDIR . 위치에 저장
-ADD requirements.txt .
+ADD requirements.txt requirements.txt
 
 # 스크립트 실행
 RUN pip install -r requirements.txt
 
 #ADD templates templates
 #
-#ADD app.py .
+ADD src/ .
 
 # 생성된 docker image를 실행할 때 자동으로 실행되는 커맨드
 CMD ["python", "app.py"]
